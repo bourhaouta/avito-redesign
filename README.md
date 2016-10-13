@@ -30,6 +30,7 @@ You can check the demo [here](#).
 * [Stylus](http://stylus-lang.com)
 * [PostCSS](http://postcss.org)
 * [Lost Grid](https://github.com/peterramsing/lost)
+* [Slick](http://kenwheeler.github.io/slick/)
 
 
 
