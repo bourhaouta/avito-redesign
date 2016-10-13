@@ -1,0 +1,36 @@
+- var links = ['2olli.com', 'aggeliopolis.gr', 'Aggeliopolis.gr', 'Asani.com.pk', 'Ayosdito.ph', 'Berniaga', 'Blocket.se', 'Bomnegocio.com', 'BuenAcuerdo.com.ar', 'Chotot.vn', 'Corotos.com.do', 'Custojusto.pt', 'Dinkos.com.au', 'donedeal.ie', 'ekhanei.com', 'Finn.no', 'Guateganga.com', 'Hadihiya.com', 'Jófogás.hu', 'Kaidee.com', 'Kapaza.be', 'Kufar.by', 'Leboncoin.fr', 'LiaoMaiMai.com', 'LuMaiMai.com', 'Mudah.my', 'Roloeganga.com', 'Segundamano.es', 'Segundamano.mx', 'Soov.ee', 'Subito.it', 'Tayara.tn', 'Tocmai.ro', 'Tori.fi', 'TradeStable.com.ng', 'Tutti.ch', 'Vende.pe!', 'Willhaben', 'Yapo.cl']
+
+mixin item(string)
+	li.footer__item: a.footer__anchor(href='.') #{string}
+
+
+mixin social(name, count, url)
+	a.footer__social(href=url, class=name target='_blank')
+
+
+footer.footer
+
+	.footer__primary
+		.master__main
+			ul.footer__list
+				+item('Aide')
+				+item('Achat sécurisé')
+				+item('Règlement')
+				+item('Publicité')
+				+item('Qui sommes-nous ?')
+				+item('Avito S.A.R.L.')
+		
+		.master__aside
+			+social('facebook', '2,475,883', 'https://www.facebook.com/Avito.ma')
+			+social('youtube', '1,936', 'https://www.youtube.com/channel/UCtslQB0IQ98Hfd-V3rNhzjA')
+			+social('twitter', '3,202', 'https://twitter.com/Avitoma')
+				
+	.container
+
+		p.footer__other
+			a(href="https://www.avito.ma") Avito.ma
+			|  fait partie d'un réseau international de sites des petites annonces. Visitez nos sites dans d'autres pays:
+
+		.footer__links
+			for link in links
+				a.footer__link(href='http://www.'+link, rel='nofollow', target='_blank') #{link}

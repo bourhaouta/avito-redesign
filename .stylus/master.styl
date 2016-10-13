@@ -1,0 +1,653 @@
+// > - TODO
+// - Responsive
+
+
+// 0 - ZERO
+@import url('//fonts.googleapis.com/css?family=Lato:100,300,400,700,900')
+
+$primary-color   = #3498DB
+$secondary-color = #2ECC71
+$gray-color      = #F5F5F5
+$radius          = 2px
+
+
+// 1 - RESET
+@import '1-reset/*'
+
+
+// 2 - TOOLS
+@import '2-tool/*'
+typographic()
+
+
+// 3 - MIXINS
+@import '3-mixin/*'
+
+
+// 4 - BASICS
+@import '4-basic/*'
+
+
+// > - STYLE
+// @lost flexbox flex
+
+
+
+
+
+body
+	// lost-utility edit
+	min-height 100vh
+	background-color $gray-color
+
+
+
+
+
+// >>> Master
+.master
+	&__aside
+		lost-column 1/4 2 30px
+	&__main
+		lost-column 3/4 2 30px
+
+
+
+
+
+// >>> Shadow
+.shadow
+	box-shadow 0 0 30px rgba(#000, .07)
+	background-color #FFF
+	border-radius $radius
+
+
+
+
+
+// >>> Navbar
+.navbar
+	@extends .shadow
+	position r
+	z-index 999
+	background-color #FFF
+
+	.container
+		height 60px
+		display flex
+		align-items center
+
+	&__brand
+		line-height 0 
+		img
+			height 30px
+
+	&__list
+		list-unstyled()
+		flex 1
+		display flex
+		justify-content flex-end
+		align-items baseline
+		font-size 13px
+	
+	&__item
+		margin-left 20px 
+		
+	&__button
+		@extends .button, .button--primary
+
+
+
+
+
+// >>> Hero
+.hero
+	position r
+	background-image url('../img/header.png')
+	padding 40px 0 90px
+	overflow hidden
+	
+	.container
+		position r
+	
+	&__heading
+		text-align center
+		margin 0
+		color #FFF
+		h1&
+			font-weight bold
+			font-size 30px
+			letter-spacing 1.1px
+			margin-bottom 7px
+		h2&
+			font-size 20px
+
+	&:before
+		content ''
+		position a all
+		background linear-gradient(20deg, $primary-color, $secondary-color);
+		background-size 400% 400%
+		opacity .4 
+		animation heroGradient 7s ease infinite
+		
+	&:after
+		content ''
+		position a 0 0px 0px 0px
+		width 0 
+		height 0
+		border-bottom 30px solid $gray-color
+		border-right 100vw solid transparent
+
+@keyframes heroGradient
+	0%
+		background-position 0% 50%
+	50%
+		background-position 100% 50%
+	100%
+		background-position 0% 50%
+
+
+
+
+
+// >>> Search
+.search
+	position r
+	z-index 1
+	margin-top -50px
+	margin-bottom 30px
+	
+	&__form
+		@extends .container, .shadow
+		padding-top 20px
+		padding-bottom 20px
+	
+	&__keywords
+	&__category
+	&__location
+		lost-column 5/16 4 15px
+		margin-bottom 0 !important
+		box-sizing border-box
+		padding-left 10px !important
+		outline none
+		border 1px solid rgba(#000, .1)
+		transition border-color .2s ease
+		color rgba(#000, .6)
+		&:hover
+			border-color rgba(#000, .2)
+		&:focus
+			border-color rgba(#000, .4)
+
+	&__keywords
+	&__category
+	&__location
+	&__submit
+		height 44px
+		border-radius $radius
+
+	&__keywords
+		// 
+	&__category
+		// 
+	&__location
+		// 
+
+	&__submit
+		@extends .button, .button--primary-fill
+		lost-column 1/16 4 15px
+		font-size 20px
+		justify-content center
+		&:after
+			icon '\f4a4'
+
+
+
+
+
+// >>> City Box
+.city-box
+	@extends .shadow
+	padding 20px
+	padding-left 10px 
+	width 100%
+	box-sizing border-box
+	height 377px
+	
+	&__heading
+		margin 0 0 10px
+		padding 0 0 15px 10px
+		font-size 16px
+		line-height @font-size
+		font-weight 600
+		border-bottom 1px solid rgba(#000, .08)
+	
+	&__list
+		list-unstyled()
+		font-size 14px
+		line-height 24px
+		font-weight 600
+
+	&__anchor
+		display flex
+		padding-right 10px
+		span:first-child
+			flex 1
+		span:last-child
+			font-weight 400
+		&:before
+			icon '\f217'
+			width 20px
+			font-size 9px
+			text-align center
+			display inline-block
+			opacity 0
+			transition opacity .1s ease-in-out
+		&:hover, &:focus
+			color $primary-color
+		&:hover:before
+			opacity 1
+
+	&__item:last-child &__anchor:before
+		content ''
+
+	&__item:last-child &__anchor span:last-child
+		display none
+
+
+
+
+
+// >>> Category Box
+.category-box
+
+	.container
+		lost-center auto 0
+
+	&__item
+		@extends .shadow
+		display block
+		position r
+		
+	&__item:hover &__title
+		transform translateY(0)
+	
+	&__item:hover &__more
+		transform translateY(0)
+		opacity 1
+	
+	&__content
+		position a 50% 50% 0 0
+		transform translate(70%, -50%)
+		
+	&__title
+		margin 0
+		font-size 35px
+		line-height @font-size
+		border-radius $radius
+		font-weight 500
+		color #FFF
+		text-shadow 0px 0px 5px rgba(#000, .35)
+		transform translateY(15px)
+		transition transform .3s ease-out
+
+	&__more
+		margin 0
+		text-align right
+		font-size 16px
+		list-style font-size
+		color #FFF
+		text-shadow 1px 1px 0px rgba(#000, .35)
+		transform translateY(-15px)
+		opacity 0
+		transition all .3s ease-out
+		&:after
+			icon '\f363'
+			margin-left 5px 
+			
+	
+	&__layer
+		position a all
+		background-repeat no-repeat
+		transition background-position .3s ease-out
+
+
+	&__item.vehicles
+		height 250px
+		background radial-gradient(#D68189, darken(#D68189, 20%))
+	&__item.vehicles &__border-2
+		border-left 0
+		margin-left 120px
+	&__item.vehicles &__layer
+		background-position -120px 30px
+		background-size 100%
+	&__item.vehicles:hover &__layer
+		background-position -140px 30px
+
+
+	&__item.electronics
+		height ( 250px / 2 ) - 2px
+		margin-bottom 4px
+		background radial-gradient(#A4BCC2, darken(#A4BCC2, 30%))
+	&__item.electronics &__border-2
+		border-top 0
+		border-right 0
+	&__item.electronics &__layer
+		top -10px
+		background-position 100% 0
+		background-size 50%
+	&__item.electronics:hover &__layer
+		background-position 110% 0
+
+
+	&__item.properties
+		height ( 250px / 2 ) - 2px
+		background radial-gradient(#69D2E7, darken(#69D2E7, 30%))
+	&__item.properties &__border-2
+		display none
+	&__item.properties &__layer
+		background-position right bottom
+		background-size 100%
+	&__item.properties:hover &__layer
+		background-position 140% -40px
+
+
+	&__item.services
+		height ( 250px / 2 ) - 2px
+		margin-top 4px
+		background radial-gradient(#C5CFC6, darken(#C5CFC6, 30%))
+	&__item.services &__layer
+		background-position 120% -20px
+		background-size 70%
+	&__item.services:hover &__layer
+		background-position 120% -60px
+
+
+	&__large
+	&__small
+		lost-column 1/2 2 4px
+	&__wide
+		lost-column 1
+	
+	&__wide &__title
+	&__small &__title
+		font-size 25px
+		line-height @font-size
+	&__wide &__more
+	&__small &__more
+		text-align left
+	&__wide &__content
+	&__small &__content
+		position a 50% 0 0 25px
+		transform translate(0, -50%) 
+
+
+
+
+
+// >>> Category Box
+.suggestion
+
+	.slick-track
+		padding-top 30px
+		padding-bottom 30px
+	
+	&__heading
+		lost-column 1
+		color #666
+		margin 0
+		padding 20px 0 0
+		font-size 20px
+		line-height @font-size
+		font-weight 600
+		text-align center
+		&:after
+			margin 12px auto 0
+			content ''
+			display block
+			background-color #666
+			size 60px 2px
+			border-radius 2px
+	
+	&__item
+		@extends .shadow
+		display block
+		overflow hidden
+		margin 0 10px
+		&:hover
+			box-shadow 0 0 20px rgba(#000, .25)
+
+	&__thumb
+		position r
+		height 150px
+		background-size cover
+		background-position center center
+		box-shadow 0 0 20px rgba(#000, .1)
+
+	&__content
+		padding 20px
+
+	&__title
+		ellipsis true
+		margin 0 0 7px
+		font-size 15px
+		line-height @font-size
+
+	&__category
+		margin 0
+		font-size 11px
+		line-height @font-size
+		ellipsis true
+		color #999
+
+	&__footer
+		border-top 1px solid rgba(#000, .1)
+		margin-top 20px
+		padding-top 20px
+		display flex
+		align-items center
+
+	&__price
+		flex 1
+		font-size 14px
+		line-height @font-size
+		font-weight 800
+		&:after
+			margin-left 4px
+			content 'DH'
+
+	&__color
+		background-color #FFF
+		size 8px
+		display inline-block
+		border-radius 50%
+		margin-left 5px
+		box-shadow 0 0 4px rgba(#000, .25)
+		transition box-shadow .2s ease-in-out
+		&:hover
+			box-shadow 0 0 4px rgba(#000, 1)
+		&.red
+			background-color $red
+		&.yellow
+			background-color $yellow
+		&.black
+			background-color #444
+		&.blue
+			background-color $blue
+	
+	.slick-prev:before
+		icon '\f124'
+	.slick-next:before
+		icon '\f125'
+	.slick-prev:before
+	.slick-next:before
+		color #777
+		transition color .2s ease
+	.slick-prev:hover:before
+	.slick-next:hover:before
+		color #222
+
+
+
+
+
+// >>> Application
+.application
+	@extends .shadow
+	position r
+	border-radius 0px
+	background-image url('../img/application.jpg')
+	background-color #000
+	background-size cover
+	background-position center center
+	background-attachment fixed
+	&:before
+		content ''
+		position a all
+		background-color rgba(#000, .5)
+	
+	.container
+		position r
+		padding-top 150px
+		padding-bottom 150px
+		z-index 99
+	
+	&__heading
+		lost-column 1 1
+		color #FFF
+		margin 0 0 30px 0
+		font-size 30px
+		font-weight 900
+		text-align center
+	
+	&__buttons
+		lost-column 1 1
+		text-align center
+	
+	&__link
+		display inline-flex
+		.content
+			padding 0 15px
+			box-shadow 0 0 30px rgba(#000, .07)
+			border-radius 0 4px 4px 0
+			background-color #FFF
+			height 50px
+			display flex
+			flex-direction column
+			justify-content center
+		span
+			display block
+			text-align left
+			font-size 14px
+			line-height @font-size + 3px
+			&:last-child
+				font-weight 800
+		&:before
+			flex 1 0 50px
+			size 50px
+			font-size 25px
+			display flex
+			align-items center
+			justify-content center
+			color #FFF
+			border-radius 4px 0 0 4px
+			transition all .2s ease-in-out
+				
+		&.google
+			color #36ABBC 
+			&:before
+				background-color #36ABBC
+				icon '\f2f0'
+			&:hover, &:focus
+				color darken(#36ABBC, 15%)
+				&:before
+					background-color darken(#36ABBC, 15%)
+		&.apple
+			color #646C6F
+			margin-left 15px
+			&:before
+				background-color #646C6F
+				icon '\f227'
+			&:hover, &:focus
+				color darken(#646C6F, 15%)
+				&:before
+					background-color darken(#646C6F, 15%)
+
+
+
+
+
+// >>> Footer
+.footer
+	background-color #FFF
+	box-shadow 0 0 30px rgba(#000, .07)
+	padding-bottom 80px
+	
+	&__primary
+		@extends .container
+		margin-bottom 20px
+		padding 20px 0
+		border-bottom 1px solid rgba(#000, .1)
+		align-items center
+
+	&__list
+		list-unstyled()
+		display flex
+		font-size 14px
+
+	&__item
+		margin-right 25px
+
+	&__other
+		margin-bottom 10px
+		font-size 15px
+		line-height @font-size
+		color #666
+		a
+			font-weight 600
+			color #555
+			&:hover, &:focus
+				color $primary-color
+
+	&__link
+		font-size 12px
+		line-height 18px
+		float left
+		color #999
+		&:hover, &:focus
+			color $primary-color
+		&:not(:last-child):after
+			content ','
+			margin-right 5px
+
+	.master__aside
+		display flex
+		justify-content flex-end
+
+	&__social
+		display inline-block
+		color #fff
+		background-color #BBB
+		margin-left 4px
+		font-size 14px
+		text-align center
+		line-height 27px
+		size 27px
+		border-radius $radius
+		&:hover
+			color #FFF
+
+	&__social.facebook
+		&:hover
+			background-color #3b5998
+		&:before
+			icon '\f231'
+	&__social.twitter
+		&:hover
+			background-color #1DA1F2
+		&:before
+			icon '\f243'
+	&__social.youtube
+		&:hover
+			background-color #CD201F
+		&:before
+			icon '\f24d'

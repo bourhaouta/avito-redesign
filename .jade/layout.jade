@@ -1,0 +1,21 @@
+//- 1 - ROOT
+include 1-root/config
+include 1-root/seed
+
+//- 2 - MIXIN
+include 2-mixin/favicon
+include 2-mixin/script
+include 2-mixin/style
+
+doctype html
+html(lang='en')
+	head
+		include 3-basic/head
+	body
+		include 4-block/navbar
+
+		block content
+		
+		include 4-block/footer
+
+		include 3-basic/script

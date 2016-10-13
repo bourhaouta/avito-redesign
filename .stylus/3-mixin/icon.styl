@@ -1,0 +1,10 @@
+//- icon
+// icon "\f101"
+// icon "\f101" "FontAwesome"
+icon()
+	if length(arguments) == 1
+		content arguments[0]
+		font-family "ionicons"
+	else
+		content arguments[0]
+		font-family arguments[1]

@@ -1,0 +1,21 @@
+mixin category(id, title)
+	a.category-box__item(href='#', class=id)
+		.category-box__layer(style='background-image: url('+dist.img+'/category/'+id+'.png)')
+		.category-box__content
+			h1.category-box__title #{title}
+			p.category-box__more Voir plus
+
+
+.category-box
+
+	.container
+
+		.category-box__large
+			+category('vehicles', 'Véhicules')
+
+		.category-box__small
+			+category('electronics', 'Électronique')
+			+category('properties' ,'Immobilier')
+
+		.category-box__wide
+			+category('services', 'Emploi et services')

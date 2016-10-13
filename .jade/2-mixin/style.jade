@@ -1,0 +1,6 @@
+//- style
+mixin style(source, unminified)
+	if unminified
+		link(href=dist.css + source + '.css?v=' + site.version, rel='stylesheet')
+	else
+		link(href=dist.css + source + '.min.css?' + site.version, rel='stylesheet')

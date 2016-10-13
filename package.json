@@ -1,0 +1,27 @@
+{
+  "name": "avito-redesign",
+  "version": "0.1.0",
+  "description": "avito redesign",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bourhaouta",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.3.1",
+    "browser-sync": "^2.11.1",
+    "cssnano": "^3.4.0",
+    "dev-ip": "^1.0.1",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-jade": "^1.0.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-postcss": "^6.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-stylus": "^2.2.0",
+    "gulp-uglify": "^1.5.1",
+    "lost": "^6.6.3"
+  }
+}

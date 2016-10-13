@@ -1,0 +1,24 @@
+meta(charset='utf-8')
+meta(http-equiv='X-UA-Compatible', content='IE=edge')
+
+if config.responsive
+	meta(name='viewport', content='width=device-width, initial-scale=1')
+
+	// - Chrome, Firefox OS and Opera
+	meta(name="theme-color", content=config.color)
+	// - Windows Phone
+	meta(name="msapplication-navbutton-color", content=config.color)
+	// - iOS Safari
+	meta(name="apple-mobile-web-app-capable", content="yes")
+	meta(name="apple-mobile-web-app-status-bar-style", content="black-translucent")
+
+if !site.description
+	title #{site.name}
+else
+	title #{site.name} &middot; #{site.description}
+
+if config.favicon
+	+favicon('16')
+	+favicon('32')
+
++style("/style")

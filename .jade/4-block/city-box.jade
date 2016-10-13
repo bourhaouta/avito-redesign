@@ -1,0 +1,23 @@
+mixin city-item(city)
+	li.city-box__item: a.city-box__anchor(href='#')
+		span #{city}
+		span #{Math.floor(Math.random() * (15 - 1300) + 1300)}
+
+
+.city-box
+	
+	h3.city-box__heading Choisissez une ville
+
+	ul.city-box__list
+		+city-item('Casablanca')
+		+city-item('Agadir')
+		+city-item('Rabat')
+		+city-item('Salé')
+		+city-item('Tanger')
+		+city-item('Al Hocïema')
+		+city-item('Errachidia')
+		+city-item('Fès')
+		+city-item('Settat')
+		+city-item('Kénitra')
+		+city-item('Safi')
+		+city-item('Autre ville...')

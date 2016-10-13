@@ -1,0 +1,24 @@
+mixin suggestion(title, category, price, image, colors)
+	a.suggestion__item(href='#', title=title)
+		.suggestion__thumb(style='background-image: url('+dist.img+'/suggestion-tmp/'+image+'.jpg)')
+		.suggestion__content
+			h4.suggestion__title #{title}
+			h5.suggestion__category #{category}
+			.suggestion__footer
+				span.suggestion__price #{price}
+				.suggestion__colors
+				if colors
+					for color in colors
+						span.suggestion__color(class=color)
+
+
+.suggestion
+
+	.container
+		+suggestion('Toshiba Satellite L50-B-Core i5-4200U', 'Voitures', '68,000', '8671467860', ['black'])
+		+suggestion('Casque AGV -2015', 'Motos', '1,700', '8613621477')
+		+suggestion('Octopus flexible trepied support selfie', 'Accessoires Informatique', '105', '8670767723', ['red'])
+		+suggestion('Chaussure lotto', 'Chaussures', '400', '8671421458', ['black', 'blue'])
+		+suggestion('Gant', 'Sacs Et Accessoires', '120', '8587061692', ['black'])
+		+suggestion('Bmx italienne', 'Vélos', '800', '8685366456', ['black'])
+		+suggestion('Manette ps4 Original', 'Jeux Vidéo Et Consoles', '500', '8673324921', ['black'])

@@ -1,0 +1,15 @@
+.search
+
+	.container
+
+		form.search__form(action='#')
+
+			input.search__keywords(type='text', placeholder='Que recherchez-vous ?')
+			
+			select.search__category()
+				option(selected) Toutes les catégories
+			
+			select.search__location()
+				option(selected) Toutes le Maroc
+
+			button.search__submit(type='submit')

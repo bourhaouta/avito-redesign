@@ -1,0 +1,98 @@
+.button
+	display inline-block
+	padding 0 18px
+	color rgba(#000, .65)
+	background-color #FFF
+	font-size 13px
+	// line-height 34px
+	font-weight 400
+	height 34px
+	border-radius @height
+	display inline-flex
+	align-items center
+	margin 0
+	// white-space nowrap
+	// border-radius $radius
+	border 1px solid rgba(#000, .15)
+	cursor pointer
+	box-sizing border-box
+	// background-color #3D464D
+	// color #FFF
+	
+	transition all .2s ease
+	
+	&:hover, &:active, &:focus
+		color rgba(#000, .95)
+		border-color rgba(#000, .4)
+		// background-color #222
+		outline 0
+		// color #FFF
+		
+
+
+
+	&--primary
+		border-color $primary-color
+		color @border-color
+		&:hover, &:active, &:focus
+			border-color darken($primary-color, 20%)
+			color @border-color
+	
+	&--primary-fill
+		border-color $primary-color
+		background-color @border-color
+		color #FFF
+		&:hover, &:active, &:focus
+			border-color darken($primary-color, 20%)
+			background-color @border-color
+			color #FFF
+
+
+
+
+	// &--outline
+	// 	color $primary-color
+	// 	border-color @color
+	// 	&:hover, &:active, &:focus
+	// 		color darken($primary-color, 10%)
+	// 		border-color @color
+	
+	&--secondary
+		border-color $secondary-color
+		background-color @border-color
+		color #FFF
+		&:hover, &:active, &:focus
+			border-color darken($secondary-color, 15%)
+			background-color @border-color
+			color #FFF
+	
+	// &--dark
+	// 	border-color $dark-color
+	// 	background-color @border-color
+	// 	color #fff
+	// 	&:hover, &:active, &:focus
+	// 		border-color lighten($dark-color, 15%)
+	// 		background-color @border-color
+	// 		color #fff
+	
+	// &--icon
+	// 	size 26px
+	// 	display flex
+	// 	align-items center
+	// 	justify-content center
+	// 	text-align center
+	// 	font-size 14px
+	// 	line-height 26px
+	// 	padding 0
+	
+	// &--small
+	// 	padding 0 6px
+	// 	font-size 10px
+	// 	height 17px
+	
+	&--large
+		padding 0 20px
+		font-size 14px
+		height 43px
+		padding-bottom 2px
+		// font-weight 700
