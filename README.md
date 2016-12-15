@@ -4,7 +4,7 @@
 [Avito](http://www.avito.ma) Home Page Redesign.
 
 ## What it looks like?
-You can check the demo [here](#).
+You can check the demo [here](https://bourhaouta.github.io/avito-redesign).
 
 ![avito redesign](https://d3dr1ze7164817.cloudfront.net/items/2w000u15041k3a0Y1s1J/avito-redesign.png?X-CloudApp-Visitor-Id=1216728&v=23750f29)
 
